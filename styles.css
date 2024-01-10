@@ -35,9 +35,7 @@ h1 {
    border: 1px solid #ddd;
 }
 
-.line strong[data-line="Elizabeth"] {
-  color: #9E579D; /* Elizabeth line color */
-}
+
 
 .status {
   color: #000;
