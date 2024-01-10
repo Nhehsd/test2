@@ -8,11 +8,8 @@ h1 {
 }
 
 .line {
-  margin-bottom: 10px; /* Add margin for better spacing between lines */
-}
-
-.line .status {
-  color: #000; /* Set the color of the status text to black */
+  margin-bottom: 10px;
+  color: #000; /* Set the default color for the line text to black */
 }
 
 
