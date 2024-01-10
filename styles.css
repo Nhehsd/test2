@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  color: #333;
+  color: #0217d6;
 }
 
 .line {
@@ -12,10 +12,7 @@ h1 {
 }
 
 .status {
-  color: #000 !important; /* Set the color of the status text to black with !important */
+  color: #000; /* Set the color of the status text to black */
 }
 
-.details {
-  color: #777; /* Set the color of the details text to a darker gray */
-  font-style: italic; /* Add italic style to details */
-}
+/* Add more styles as needed */
