@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const lineColors = {
       Bakerloo: "#996633",
       Central: "#CC3333",
-      Circle: "#FFCC00",
+      Circle: "##FF8800",
       District: "#006633",
       Hammersmith: "#CC9999",
       Jubilee: "#868F98",
