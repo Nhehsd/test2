@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
       case 8: // Severe Delays
         return "#FF0000"; // Red
       default:
-        return "#000000"; // Default to black
+        return "#FF0000"; // Default to black
     }
   }
 });
