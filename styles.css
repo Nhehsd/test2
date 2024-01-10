@@ -14,22 +14,25 @@ h1 {
   display: table;
   width: 600px;
   padding: 10px;
+  border-collapse: collapse;
 }
 
 .line {
   display: table-row;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .line strong {
   display: table-cell;
   padding-right: 10px;
   font-weight: bold; /* Make the line name bold */
+   border: 1px solid #ddd;
 }
 
 .line .status {
   display: table-cell;
   font-weight: bold; /* Make the status text bold */
+   border: 1px solid #ddd;
 }
 
 .line strong[data-line="Elizabeth"] {
