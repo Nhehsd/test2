@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
   const statusContainer = document.getElementById("status-container");
 
-  // Replace YOUR_APP_ID and YOUR_APP_KEY with your actual TfL API credentials
 
   const apiUrl = `https://api.tfl.gov.uk/line/mode/tube/status`;
 
@@ -10,6 +9,23 @@ document.addEventListener("DOMContentLoaded", function() {
     .then(response => response.json())
     .then(data => displayTubeStatus(data))
     .catch(error => console.error("Error fetching data:", error));
+
+  // Function to display tube status
+  function displayTubeStatus(data) {
+    const lineColors = {
+      Bakerloo: "#996633",
+      Central: "#CC3333",
+      Circle: "#FFCC00",
+      District: "#006633",
+      Hammersmith: "#CC9999",
+      Jubilee: "#868F98",
+      Metropolitan: "#660066",
+      Northern: "#000000",
+      Piccadilly: "#0019a8",
+      Victoria: "#0099CC",
+      Waterloo: "#66CCCC"
+      // Add more lines and colors as needed
+    };
 
   // Function to display tube status
   function displayTubeStatus(data) {
