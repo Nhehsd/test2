@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
  const tubeLines = data.map((line) => {
       const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
       return `<div class="line" style="color: ${lineColor};">
-                <strong>${line.name}</strong>: ${line.lineStatuses[0].statusSeverityDescription}
+                <strong>${line.name}</strong>: <span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
               </div>`;
     });
 
