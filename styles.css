@@ -26,13 +26,13 @@ h1 {
   display: table-cell;
   padding-right: 10px;
   font-weight: bold; /* Make the line name bold */
-   border: 1px solid #ddd;
+   border: 5px solid #0a0a0a;
 }
 
 .line .status {
   display: table-cell;
   font-weight: bold; /* Make the status text bold */
-   border: 1px solid #ddd;
+   border: 5px solid #0a0a0a;
 }
 
 
