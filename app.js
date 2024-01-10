@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const londonOvergroundApiUrl = 'https://api.tfl.gov.uk/line/mode/national-rail/status';
 
  // Fetch tube status data from TfL API
-const fetchTubeData = fetch(tubeApiUrl).then((response) => response.json());
+  const fetchTubeData = fetch(tubeApiUrl).then((response) => response.json());
   const fetchElizabethLineData = fetch(elizabethLineApiUrl).then((response) => response.json());
   const fetchLondonOvergroundData = fetch(londonOvergroundApiUrl).then((response) => response.json());
 
@@ -17,7 +17,7 @@ const fetchTubeData = fetch(tubeApiUrl).then((response) => response.json());
     .catch((error) => console.error("Error fetching data:", error));
 
   // Function to display tube status
-   function displayTubeStatus(tubeData, elizabethLineData, londonOvergroundData) {
+  function displayTubeStatus(tubeData, elizabethLineData, londonOvergroundData) {
     const lineColors = {
       Bakerloo: "#996633",
       Central: "#CC3333",
@@ -36,7 +36,14 @@ const fetchTubeData = fetch(tubeApiUrl).then((response) => response.json());
     };
 
    
-  const elizabethLine = elizabethLineData.map((line) => {
+ const tubeLines = tubeData.map((line) => {
+      const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+      return `<div class="line" style="color: ${lineColor};">
+                <strong>${line.name}</strong><span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
+              </div>`;
+    });
+
+    const elizabethLine = elizabethLineData.map((line) => {
       const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
       return `<div class="line" style="color: ${lineColor};">
                 <strong>${line.name}</strong><span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
