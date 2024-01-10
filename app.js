@@ -29,11 +29,21 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
   // Function to display tube status
- const tubeLines = data.map((line) => {
-      const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
-      return `<div class="line" style="color: ${lineColor};">
-                <strong>${line.name}</strong>: <span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
-              </div>`;
+const tubeLines = data.map((line) => {
+    const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+    const statusSeverityDescription = line.lineStatuses[0].statusSeverityDescription;
+    const statusDetails = line.lineStatuses[0].statusDetails;
+
+    let extraDetailsHTML = '';
+
+    if (statusDetails && statusDetails.length > 0) {
+      extraDetailsHTML = `<br><span class="details">${statusDetails[0].details}</span>`;
+    }
+
+    return `<div class="line" style="color: ${lineColor};">
+              <strong>${line.name}</strong>: ${statusSeverityDescription}
+              ${extraDetailsHTML}
+            </div>`;
     });
 
     statusContainer.innerHTML = tubeLines.join("");
