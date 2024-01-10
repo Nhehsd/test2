@@ -21,14 +21,14 @@ document.addEventListener("DOMContentLoaded", function() {
       Central: "#CC3333",
       Circle: "#E1A700",
       District: "#006633",
-      Hammersmith: "#CC9999",
       Jubilee: "#868F98",
       Metropolitan: "#660066",
       Northern: "#000000",
       Piccadilly: "#0019a8",
       Victoria: "#0099CC",
-      Waterloo: "#66CCCC",
-      Elizabeth: "#9E579D" // Elizabeth line color
+      "Waterloo & City": "#7EC8E3", // Waterloo & City line color
+      "Hammersmith & City": "#F68C95", // Hammersmith & City line color
+      "Elizabeth line": "#9E579D" // Elizabeth line color
       // Add more lines and colors as needed
     };
 
