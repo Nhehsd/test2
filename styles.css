@@ -12,7 +12,7 @@ h1 {
 
 .table-container {
   display: table;
-  width: 600px;
+  width: 100%;
   padding: 10px;
   border-collapse: collapse;
 }
@@ -41,4 +41,12 @@ h1 {
 .status {
   color: #000;
   font-weight: bold; /* Make the status text bold */
+}
+
+
+/* Media query for devices with a screen width of 768 pixels or larger */
+@media only screen and (min-width: 768px) {
+  .table-container {
+    max-width: 600px; /* Adjust the max-width based on your design preference */
+  }
 }
