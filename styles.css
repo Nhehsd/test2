@@ -7,6 +7,7 @@ h1 {
   color: #0217d6;
 }
 
+
 .table-container {
   display: table;
   width: 100%;
@@ -28,7 +29,7 @@ h1 {
   font-weight: bold; /* Make the status text bold */
 }
 
-.line strong:contains("Elizabeth") {
+.line strong[data-line="Elizabeth"] {
   color: #9E579D; /* Elizabeth line color */
 }
 
