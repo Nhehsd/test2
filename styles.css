@@ -1,5 +1,7 @@
 body {
   font-family: 'Proxima Nova', sans-serif;
+  color: #333;
+  font-weight: bold;
   /* Other styles for the body */
 }
 
