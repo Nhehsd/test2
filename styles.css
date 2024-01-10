@@ -28,7 +28,11 @@ h1 {
   font-weight: bold; /* Make the status text bold */
 }
 
+.line strong:contains("Elizabeth") {
+  color: #9E579D; /* Elizabeth line color */
+}
 
 .status {
   color: #000;
+  font-weight: bold; /* Make the status text bold */
 }
