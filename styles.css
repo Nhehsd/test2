@@ -20,17 +20,15 @@ h1 {
 .line strong {
   display: table-cell;
   padding-right: 10px;
+  font-weight: bold; /* Make the line name bold */
 }
 
 .line .status {
   display: table-cell;
+  font-weight: bold; /* Make the status text bold */
 }
 
-.line strong:contains("Elizabeth") {
-  font-weight: bold;
-  color: #9E579D; /* Elizabeth line color */
-}
 
 .status {
-  color: #000; /* Set the color of the status text to black */
+  color: #000;
 }
