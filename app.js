@@ -40,28 +40,51 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add more lines and colors as needed
       };
 
-      const tubeLines = tubeData.map((line) => {
+    const tubeLines = tubeData.map((line) => {
+      const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+      const statusSeverity = line.lineStatuses[0].statusSeverity;
+      const statusColor = getStatusColor(statusSeverity);
+      
+      return `<div class="line" style="color: ${lineColor};">
+                <strong>${line.name}</strong><span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
+              </div>`;
+    });
+
+    const elizabethLine = elizabethLineData.map((line) => {
+      const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+      const statusSeverity = line.lineStatuses[0].statusSeverity;
+      const statusColor = getStatusColor(statusSeverity);
+
+      return `<div class="line" style="color: ${lineColor};">
+                <strong>${line.name}</strong><span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
+              </div>`;
+    });
+
+    const londonOvergroundLine = nationalRailData.filter((line) => line.name === "London Overground")
+      .map((line) => {
         const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+        const statusSeverity = line.lineStatuses[0].statusSeverity;
+        const statusColor = getStatusColor(statusSeverity);
+
         return `<div class="line" style="color: ${lineColor};">
-                  <strong>${line.name}</strong><span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
+                  <strong>${line.name}</strong><span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
                 </div>`;
       });
 
-      const elizabethLine = elizabethLineData.map((line) => {
-        const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
-        return `<div class="line" style="color: ${lineColor};">
-                  <strong>${line.name}</strong><span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
-                </div>`;
-      });
+    statusContainer.innerHTML = `<div class="table-container">${tubeLines.concat(elizabethLine, londonOvergroundLine).join("")}</div>`;
+  }
 
-      const londonOvergroundLine = nationalRailData.filter((line) => line.name === "London Overground")
-        .map((line) => {
-          const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
-          return `<div class="line" style="color: ${lineColor};">
-                    <strong>${line.name}</strong><span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
-                  </div>`;
-        });
-
-      statusContainer.innerHTML = `<div class="table-container">${tubeLines.concat(elizabethLine, londonOvergroundLine).join("")}</div>`;
+  // Function to determine the color based on status severity
+  function getStatusColor(severity) {
+    switch (severity) {
+      case 10: // Good Service
+        return "#00AA00"; // Green
+      case 9: // Minor Delays
+        return "#FFA500"; // Orange
+      case 8: // Severe Delays
+        return "#FF0000"; // Red
+      default:
+        return "#000000"; // Default to black
     }
+  }
 });
