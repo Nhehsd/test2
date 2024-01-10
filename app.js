@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
   // Function to display tube status
-  function displayTubeStatus(data) {
-    const tubeLines = data.map(line => {
-      return `<div class="line">
+ const tubeLines = data.map((line) => {
+      const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+      return `<div class="line" style="color: ${lineColor};">
                 <strong>${line.name}</strong>: ${line.lineStatuses[0].statusSeverityDescription}
               </div>`;
     });
