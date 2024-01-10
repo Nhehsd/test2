@@ -15,3 +15,7 @@ h1 {
 .status {
   color: #000; /* Set the color of the status text to black */
 }
+
+.details {
+  color: #777; /* Set the color of the details text to a darker gray */
+}
