@@ -13,11 +13,12 @@ h1 {
 .table-container {
   display: table;
   width: 600px;
+  padding: 10px;
 }
 
 .line {
   display: table-row;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .line strong {
