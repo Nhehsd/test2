@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
       Northern: "#000000",
       Piccadilly: "#0019a8",
       Victoria: "#0099CC",
-      Waterloo: "#66CCCC"
+      Waterloo: "#66CCCC",
+      Elizabeth: "#9E579D"
       // Add more lines and colors as needed
     };
 
