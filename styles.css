@@ -7,8 +7,28 @@ h1 {
   color: #0217d6;
 }
 
+.table-container {
+  display: table;
+  width: 100%;
+}
+
 .line {
+  display: table-row;
   margin-bottom: 10px;
+}
+
+.line strong {
+  display: table-cell;
+  padding-right: 10px;
+}
+
+.line .status {
+  display: table-cell;
+}
+
+.line strong:contains("Elizabeth") {
+  font-weight: bold;
+  color: #9E579D; /* Elizabeth line color */
 }
 
 .status {
