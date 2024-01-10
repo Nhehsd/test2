@@ -36,26 +36,28 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
    
- const tubeLines = tubeData.map((line) => {
+const tubeLines = tubeData.map((line) => {
+    const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+    return `<div class="line" style="color: ${lineColor};">
+              <strong>${line.name}</strong><span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
+            </div>`;
+  });
+
+  const elizabethLine = elizabethLineData.map((line) => {
+    const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+    return `<div class="line" style="color: ${lineColor};">
+              <strong>${line.name}</strong><span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
+            </div>`;
+  });
+
+  const londonOvergroundLine = nationalRailData.filter((line) => line.name === "London Overground")
+    .map((line) => {
       const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
       return `<div class="line" style="color: ${lineColor};">
                 <strong>${line.name}</strong><span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
               </div>`;
     });
 
-    const elizabethLine = elizabethLineData.map((line) => {
-      const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
-      return `<div class="line" style="color: ${lineColor};">
-                <strong>${line.name}</strong><span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
-              </div>`;
-    });
-
-    const londonOvergroundLine = londonOvergroundData.map((line) => {
-      const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
-      return `<div class="line" style="color: ${lineColor};">
-                <strong>${line.name}</strong><span class="status">${line.lineStatuses[0].statusSeverityDescription}</span>
-              </div>`;
-    });
 
     statusContainer.innerHTML = `<div class="table-container">${tubeLines.concat(elizabethLine, londonOvergroundLine).join("")}</div>`;
   }
