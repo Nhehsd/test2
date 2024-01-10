@@ -32,11 +32,12 @@ document.addEventListener("DOMContentLoaded", function() {
       // Add more lines and colors as needed
     };
 
-   const tubeLines = data.map((line) => {
-    const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
-    return `<div class="line ${line.name.toLowerCase()}"> <!-- Added class with line name -->
-              <strong>${line.name}</strong>: ${line.lineStatuses[0].statusSeverityDescription}
-            </div>`;
+   
+    const tubeLines = tubeData.map((line) => {
+      const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+      return `<div class="line" style="color: ${lineColor};">
+                <strong>${line.name}</strong>: ${line.lineStatuses[0].statusSeverityDescription}
+              </div>`;
     });
 
     const elizabethLine = elizabethLineData.map((line) => {
