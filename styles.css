@@ -11,10 +11,6 @@ h1 {
   margin-bottom: 10px; /* Add margin for better spacing between lines */
 }
 
-.line strong:contains("Elizabeth") {
-  color: #9E579D; /* Elizabeth line color */
-}
-
 .status {
   color: #000 !important; /* Set the color of the status text to black */
 }
