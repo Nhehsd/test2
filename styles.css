@@ -11,3 +11,7 @@ h1 {
 .line {
   margin-bottom: 10px; /* Add margin for better spacing between lines */
 }
+
+.status {
+  color: #000; /* Set the color of the status text to black */
+}
