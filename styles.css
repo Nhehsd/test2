@@ -12,5 +12,10 @@ h1 {
 }
 
 .status {
-  color: #000; /* Set the color of the status text to black */
+  color: #000 !important; /* Set the color of the status text to black with !important */
+}
+
+.details {
+  color: #777; /* Set the color of the details text to a darker gray */
+  font-style: italic; /* Add italic style to details */
 }
