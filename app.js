@@ -9,13 +9,13 @@ document.addEventListener("DOMContentLoaded", function() {
  // Fetch tube status data from TfL API
   const fetchTubeData = fetch(tubeApiUrl).then((response) => response.json());
   const fetchElizabethLineData = fetch(elizabethLineApiUrl).then((response) => response.json());
-  const fetchLondonOvergroundData = fetch(londonOvergroundApiUrl).then((response) => response.json());
-
+  const fetchNationalRailData = fetch('https://api.tfl.gov.uk/line/mode/national-rail/status')
+  .then((response) => response.json());
   // Use Promise.all to wait for both API requests to complete
-  Promise.all([fetchTubeData, fetchElizabethLineData, fetchLondonOvergroundData])
-    .then(([tubeData, elizabethLineData, londonOvergroundData]) => displayTubeStatus(tubeData, elizabethLineData, londonOvergroundData))
-    .catch((error) => console.error("Error fetching data:", error));
-
+ Promise.all([fetchTubeData, fetchElizabethLineData, fetchNationalRailData])
+  .then(([tubeData, elizabethLineData, nationalRailData]) => displayTubeStatus(tubeData, elizabethLineData, nationalRailData))
+  .catch((error) => console.error("Error fetching data:", error));
+  
   // Function to display tube status
   function displayTubeStatus(tubeData, elizabethLineData, londonOvergroundData) {
     const lineColors = {
@@ -58,7 +58,5 @@ const tubeLines = tubeData.map((line) => {
               </div>`;
     });
 
-
-    statusContainer.innerHTML = `<div class="table-container">${tubeLines.concat(elizabethLine, londonOvergroundLine).join("")}</div>`;
-  }
-});
+  statusContainer.innerHTML = `<div class="table-container">${tubeLines.concat(elizabethLine, londonOvergroundLine).join("")}</div>`;
+}
