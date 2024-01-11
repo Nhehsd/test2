@@ -40,12 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add more lines and colors as needed
       };
 
-      
-    const tubeLines = tubeData.map((line) => {
+      const tubeLines = tubeData.map((line) => {
       const lineColor = lineColors[line.name] || "#000000";
       const statusSeverity = line.lineStatuses[0].statusSeverity;
       const statusColor = getStatusColor(statusSeverity);
-      const cause = line.lineStatuses[0].reason === "No specific reason provided" ? "" : line.lineStatuses[0].reason;
+      const cause = line.lineStatuses[0].reason ?? ""; // Use empty string if reason is undefined
 
       return `<div class="line" style="color: ${lineColor};">
                 <strong>${line.name}</strong>
@@ -58,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const lineColor = lineColors[line.name] || "#000000";
       const statusSeverity = line.lineStatuses[0].statusSeverity;
       const statusColor = getStatusColor(statusSeverity);
-      const cause = line.lineStatuses[0].reason === "No specific reason provided" ? "" : line.lineStatuses[0].reason;
+      const cause = line.lineStatuses[0].reason ?? ""; // Use empty string if reason is undefined
 
       return `<div class="line" style="color: ${lineColor};">
                 <strong>${line.name}</strong>
@@ -72,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const lineColor = lineColors[line.name] || "#000000";
         const statusSeverity = line.lineStatuses[0].statusSeverity;
         const statusColor = getStatusColor(statusSeverity);
-        const cause = line.lineStatuses[0].reason === "No specific reason provided" ? "" : line.lineStatuses[0].reason;
+        const cause = line.lineStatuses[0].reason ?? ""; // Use empty string if reason is undefined
 
         return `<div class="line" style="color: ${lineColor};">
                   <strong>${line.name}</strong>
