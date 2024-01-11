@@ -45,8 +45,8 @@ h1 {
 
 
 /* Media query for devices with a screen width of 768 pixels or larger */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1440px) {
   .table-container {
-    max-width: 600px; /* Adjust the max-width based on your design preference */
+    min-width: 100%; /* Adjust the max-width based on your design preference */
   }
 }
