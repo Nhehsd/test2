@@ -14,7 +14,7 @@ h1 {
 
 .table-container {
   display: table;
-  width: 100%;
+  width: 75%;
   padding: 10px;
   border-collapse: collapse;
 }
@@ -46,9 +46,9 @@ h1 {
 }
 
 
-/* Media query for devices with a screen width of 768 pixels or larger */
+/* Media query for devices with a screen width of x pixels or larger */
 @media only screen and (min-width: 1440px) {
   .table-container {
-    min-width: 100%; /* Adjust the max-width based on your design preference */
+    min-width: 75%; /* Adjust the max-width based on your design preference */
   }
 }
