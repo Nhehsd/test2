@@ -15,41 +15,36 @@ h1 {
 .table-container {
   display: table;
   width: 100%;
-  max-width: 100%;
   padding: 10px;
   border-collapse: collapse;
 }
 
 .line {
   display: table-row;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+}
+
+.line strong,
+.line .status,
+.line .cause { /* Apply the same styling to the cause */
+  display: table-cell;
+  padding: 8px 5px;
+  border: 1px solid #0a0a0a;
 }
 
 .line strong {
-  display: table-cell;
-  padding: 8px 5px;
-  font-weight: bold; /* Make the line name bold */
-   border: 1px solid #0a0a0a;
+  padding: 8px 15px;
 }
 
-.line .status {
-  display: table-cell;
-  padding: 8px 5px;
-  font-weight: bold; /* Make the status text bold */
-   border: 1px solid #0a0a0a;
-}
-
-
-
-.status {
-  color: #000;
-  font-weight: bold; /* Make the status text bold */
-}
-
-
-/* Media query for devices with a screen width of x pixels or smaller */
-@media only screen and (max-width: 768px) {
+/* Media query for smaller screens */
+@media only screen and (max-width: 100%) {
   .table-container {
-    min-width: 50%; /* Adjust the max-width based on your design preference */
+    padding: 5px;
+  }
+
+  .line strong,
+  .line .status,
+  .line .cause {
+    padding: 6px 3px;
   }
 }
