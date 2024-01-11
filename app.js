@@ -41,33 +41,42 @@ document.addEventListener("DOMContentLoaded", function () {
       };
 
     const tubeLines = tubeData.map((line) => {
-      const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+      const lineColor = lineColors[line.name] || "#000000";
       const statusSeverity = line.lineStatuses[0].statusSeverity;
       const statusColor = getStatusColor(statusSeverity);
-      
+      const cause = line.lineStatuses[0].reason || "No specific reason provided";
+
       return `<div class="line" style="color: ${lineColor};">
-                <strong>${line.name}</strong><span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
+                <strong>${line.name}</strong>
+                <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
+                <span class="cause">${cause}</span>
               </div>`;
     });
 
     const elizabethLine = elizabethLineData.map((line) => {
-      const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+      const lineColor = lineColors[line.name] || "#000000";
       const statusSeverity = line.lineStatuses[0].statusSeverity;
       const statusColor = getStatusColor(statusSeverity);
+      const cause = line.lineStatuses[0].reason || "No specific reason provided";
 
       return `<div class="line" style="color: ${lineColor};">
-                <strong>${line.name}</strong><span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
+                <strong>${line.name}</strong>
+                <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
+                <span class="cause">${cause}</span>
               </div>`;
     });
 
     const londonOvergroundLine = nationalRailData.filter((line) => line.name === "London Overground")
       .map((line) => {
-        const lineColor = lineColors[line.name] || "#000000"; // Default to black if color is not specified
+        const lineColor = lineColors[line.name] || "#000000";
         const statusSeverity = line.lineStatuses[0].statusSeverity;
         const statusColor = getStatusColor(statusSeverity);
+        const cause = line.lineStatuses[0].reason || "No specific reason provided";
 
         return `<div class="line" style="color: ${lineColor};">
-                  <strong>${line.name}</strong><span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
+                  <strong>${line.name}</strong>
+                  <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
+                  <span class="cause">${cause}</span>
                 </div>`;
       });
 
@@ -84,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
       case 8: // Severe Delays
         return "#FF0000"; // Red
       default:
-        return "#FF0000"; // Default to black
+        return "#FF0000"; // efault to black
     }
   }
 });
