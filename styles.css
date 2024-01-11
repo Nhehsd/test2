@@ -27,7 +27,7 @@ h1 {
 
 .line strong {
   display: table-cell;
-  padding-right: 10px;
+  padding: 8px 5px;
   font-weight: bold; /* Make the line name bold */
    border: 1px solid #0a0a0a;
 }
