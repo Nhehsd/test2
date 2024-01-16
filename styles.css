@@ -29,36 +29,24 @@ body {
 .line {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 5px;
   background-color: #f0f0f0;
 }
 
-.line .info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .line strong {
   margin-bottom: 5px;
 }
 
-.line .status,
-.line .cause {
-  flex-shrink: 0;
-}
-
 .line .status {
   font-weight: bold;
-  margin-right: 10px; /* Adjust the margin-right for space between status and cause */
 }
 
 .line .cause {
   color: #ff9900;
-  visibility: visible;
+  visibility: hidden;
 }
 
 /* Hide the cause text if it's "N/A" */
