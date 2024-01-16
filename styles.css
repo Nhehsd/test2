@@ -28,7 +28,9 @@ body {
 
 .line {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column; /* Display elements in a column */
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 5px;
@@ -47,7 +49,6 @@ body {
 .line .status {
   font-weight: bold;
   margin-bottom: 5px;
-  text-align: right;
 }
 
 .line .cause {
