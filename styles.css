@@ -1,10 +1,13 @@
 body {
-  background-color: rgba(255, 255, 255, 0)
+  
   font-family: 'Proxima Nova', sans-serif;
   color: #333;
   font-weight: bold;
   font-size: medium;
   background-image: url('1.jpg');
+   background-size: 100% 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
   /* Other styles for the body */
 }
 
@@ -19,7 +22,7 @@ h1 {
   width: 100%;
   padding: 10px;
   border-collapse: collapse;
-  background-color: rgba(255, 255, 255, 0.8)
+  background-color: rgba(255, 255, 255, 0.9)
 }
 
 .line {
