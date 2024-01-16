@@ -50,7 +50,7 @@ const tubeLines = tubeData.map((line) => {
             <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
           </div>`;
 });
-});
+
 
     const elizabethLine = elizabethLineData.map((line) => {
       const lineColor = lineColors[line.name] || "#000000";
