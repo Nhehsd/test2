@@ -1,72 +1,61 @@
 html, body {
   height: 100%;
-  font-family: 'Proxima Nova', sans-serif;
-  color: #333;
-  font-weight: bold;
-  font-size: medium;
+  margin: 0;
 }
 
 body {
-  
+  background: url('1.jpg') center center fixed; /* Background image properties */
+  background-size: cover; /* Ensure the background image covers the entire body */
   font-family: 'Proxima Nova', sans-serif;
-  color: #333;
-  font-weight: bold;
-  font-size: medium;
-  background-image: url('1.jpg');
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-   /* Other styles for the body */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
 }
 
-h1 {
-  color: #FFFFFF;
-  font-family: 'Proxima Nova', sans-serif;
- }
-
-
 .table-container {
-  display: table;
   width: 100%;
-  height: 95%;
-  padding: 10px;
-  font-family: 'Proxima Nova', sans-serif;
-  border-collapse: collapse;
-  background-color: rgba(255, 255, 255, 0.9)
+  max-width: 800px;
+  margin: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .line {
-  display: table-row;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f0f0f0; /* Light gray background color */
 }
 
-.line strong,
-.line .status,
-.line .cause { /* Apply the same styling to the cause */
-  display: table-cell;
-  padding: 8px 5px;
-  font-family: 'Proxima Nova', sans-serif;
-  border: 1px solid #0a0a0a;
+.line strong {
+  flex-grow: 1;
+  padding-right: 10px;
+}
+
+.line .status, .line .cause {
+  flex-shrink: 0;
+}
+
+.line .status {
+  font-weight: bold;
 }
 
 .line .cause {
-  color: #000; /* Adjust the color of the reason text */
+  color: #ff9900; /* TfL orange color for delay reasons */
 }
 
-
-.line strong {
-  padding: 8px 15px;
-}
-
-/* Media query for smaller screens */
-@media only screen and (max-width: 100%) {
-  .table-container {
-    padding: 5px;
-  }
-
-  .line strong,
-  .line .status,
-  .line .cause {
-    padding: 6px 3px;
+@media only screen and (max-width: 600px) {
+  .line {
+    flex-direction: column;
+    text-align: center;
   }
 }
