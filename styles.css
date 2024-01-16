@@ -53,9 +53,4 @@ body {
   color: #ff9900; /* TfL orange color for delay reasons */
 }
 
-@media only screen and (max-width: 600px) {
-  .line {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+
