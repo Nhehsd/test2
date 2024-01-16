@@ -5,10 +5,8 @@ body {
   font-weight: bold;
   font-size: medium;
   background-image: url('1.jpg');
-   background-size: 1920px 1080px; 
   background-position: center;
-  background-repeat: no-repeat;
-  /* Other styles for the body */
+   /* Other styles for the body */
 }
 
 h1 {
