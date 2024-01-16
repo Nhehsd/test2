@@ -30,11 +30,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  flex-direction: column; /* Display elements in a column */
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 5px;
   background-color: #f0f0f0;
+}
+
+.line .info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .line strong {
