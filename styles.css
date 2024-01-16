@@ -4,8 +4,8 @@ html, body {
 }
 
 body {
-  background: url('1.jpg') center center fixed; /* Background image properties */
-  background-size: cover; /* Ensure the background image covers the entire body */
+  background: url('1.jpg') center center fixed;
+  background-size: cover;
   font-family: 'Proxima Nova', sans-serif;
   color: white;
   display: flex;
@@ -28,20 +28,20 @@ body {
 
 .line {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 5px;
-  background-color: #f0f0f0; /* Light gray background color */
+  background-color: #f0f0f0;
 }
 
 .line strong {
-  flex-grow: 1;
-  padding-right: 10px;
+  margin-bottom: 5px;
 }
 
-.line .status, .line .cause {
+.line .status,
+.line .cause {
   flex-shrink: 0;
 }
 
@@ -50,7 +50,5 @@ body {
 }
 
 .line .cause {
-  color: #ff9900; /* TfL orange color for delay reasons */
+  color: #ff9900;
 }
-
-
