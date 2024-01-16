@@ -46,25 +46,21 @@ const tubeLines = tubeData.map((line) => {
   const statusColor = getStatusColor(statusSeverity);
 
   return `<div class="line" style="color: ${lineColor};">
-            <div class="info">
-              <strong>${line.name}</strong>
-              <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
-            </div>
-            <div class="cause">${line.lineStatuses[0].reason || "N/A"}</div>
+            <strong>${line.name}</strong>
+            <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
           </div>`;
+});
 });
 
     const elizabethLine = elizabethLineData.map((line) => {
       const lineColor = lineColors[line.name] || "#000000";
       const statusSeverity = line.lineStatuses[0].statusSeverity;
       const statusColor = getStatusColor(statusSeverity);
-      const cause = line.lineStatuses[0].reason ?? "N/A"; // Use empty string if reason is undefined
-
+   
       return `<div class="line" style="color: ${lineColor};">
                 <strong>${line.name}</strong>
                 <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
-                <span class="cause">${cause}</span>
-              </div>`;
+                </div>`;
     });
 
     const londonOvergroundLine = nationalRailData.filter((line) => line.name === "London Overground")
