@@ -4,7 +4,7 @@ body {
   color: #333;
   font-weight: bold;
   font-size: medium;
-  background-image: url('../1.jpg');
+  background-image: url('1.jpg');
   /* Other styles for the body */
 }
 
