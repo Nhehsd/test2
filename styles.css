@@ -30,6 +30,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column; /* Updated to column */
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 5px;
@@ -47,7 +48,7 @@ body {
 
 .line .status {
   font-weight: bold;
-  margin-right: 10px; /* Adjust the margin-right for space between status and cause */
+  margin-bottom: 5px;
 }
 
 .line .cause {
