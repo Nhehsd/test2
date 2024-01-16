@@ -29,17 +29,11 @@ body {
 .line {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 5px;
   background-color: #f0f0f0;
-}
-
-.line .info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .line strong {
@@ -53,7 +47,7 @@ body {
 
 .line .status {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-right: 10px; /* Adjust the margin-right for space between status and cause */
 }
 
 .line .cause {
