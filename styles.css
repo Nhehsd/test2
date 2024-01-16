@@ -28,7 +28,7 @@ body {
 
 .line {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between; /* Align status to the right */
   align-items: flex-start;
   margin-bottom: 15px;
   padding: 10px;
@@ -51,4 +51,11 @@ body {
 
 .line .cause {
   color: #ff9900;
+  visibility: visible; /* Make sure it's visible by default */
+}
+
+/* Hide the cause text if it's "N/A" */
+.line .cause:empty,
+.line .cause:contains("N/A") {
+  visibility: hidden;
 }
