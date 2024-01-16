@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
   return `<div class="line" style="color: ${lineColor};">
             <strong>${line.name}</strong>
             <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
-            <div class="cause">${line.lineStatuses[0].reason || "N/A"}</div>
+            <span class="cause">${line.lineStatuses[0].reason || "N/A"}</span>
           </div>`;
 });
 
