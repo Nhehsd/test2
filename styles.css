@@ -28,6 +28,7 @@ body {
 
 .line {
   display: flex;
+  flex-direction: column; /* Display elements in a column */
   justify-content: space-between; /* Align status to the right */
   align-items: flex-start;
   margin-bottom: 15px;
