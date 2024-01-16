@@ -40,18 +40,19 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add more lines and colors as needed
       };
 
-      const tubeLines = tubeData.map((line) => {
-      const lineColor = lineColors[line.name] || "#000000";
-      const statusSeverity = line.lineStatuses[0].statusSeverity;
-      const statusColor = getStatusColor(statusSeverity);
-      const cause = line.lineStatuses[0].reason ?? "N/A"; // Use empty string if reason is undefined
+     const tubeLines = tubeData.map((line) => {
+  const lineColor = lineColors[line.name] || "#000000";
+  const statusSeverity = line.lineStatuses[0].statusSeverity;
+  const statusColor = getStatusColor(statusSeverity);
 
-      return `<div class="line" style="color: ${lineColor};">
-                <strong>${line.name}</strong>
-                <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
-                <span class="cause">${cause}</span>
-              </div>`;
-    });
+  return `<div class="line">
+            <div class="info" style="color: ${lineColor};">
+              <strong>${line.name}</strong>
+              <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
+            </div>
+            <span class="cause">${line.lineStatuses[0].reason || "N/A"}</span>
+          </div>`;
+});
 
     const elizabethLine = elizabethLineData.map((line) => {
       const lineColor = lineColors[line.name] || "#000000";
