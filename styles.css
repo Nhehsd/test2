@@ -28,9 +28,7 @@ body {
 
 .line {
   display: flex;
-  flex-direction: column; /* Display elements in a column */
-  justify-content: space-between; /* Align status to the right */
-  align-items: flex-start;
+  flex-direction: column;
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 5px;
@@ -48,11 +46,12 @@ body {
 
 .line .status {
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .line .cause {
   color: #ff9900;
-  visibility: visible; /* Make sure it's visible by default */
+  visibility: visible;
 }
 
 /* Hide the cause text if it's "N/A" */
