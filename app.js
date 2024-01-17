@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const statusContainer = document.getElementById("status-container");
 
-  const tubeApiUrl = `https://api.tfl.gov.uk/line/mode/tube/status`;
-  const elizabethLineApiUrl = 'https://api.tfl.gov.uk/line/elizabeth/status';
-  const nationalRailApiUrl = 'https://api.tfl.gov.uk/line/mode/overground/status';
+  const tubeApiUrl = `https://api.tfl.gov.uk/line/mode/tube/status`; // Defines the api for the tube lines
+  const elizabethLineApiUrl = 'https://api.tfl.gov.uk/line/elizabeth/status'; //Defines the api for the Elizabeth line
+  const nationalRailApiUrl = 'https://api.tfl.gov.uk/line/mode/overground/status'; //Defines the api for the London Overground line (using the old name to avoid having to re write with the correct name 🙃)
 
   // Fetch tube status data from TfL API
   const fetchTubeData = fetch(tubeApiUrl).then((response) => response.json());
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Elizabeth Line Data:", elizabethLineData);
     console.log("National Rail Data:", nationalRailData);
   }
-    // Function to display tube status
+    // Function to display tube status and set the colour of the text to match the colour of the lines
     function displayTubeStatus(tubeData, elizabethLineData, nationalRailData) {
       const lineColors = {
         Bakerloo: "#996633",
@@ -37,9 +37,10 @@ document.addEventListener("DOMContentLoaded", function () {
         "Hammersmith & City": "#F68C95",
         "London Overground": "#EE7C0E",
         "Elizabeth line": "#9E579D"
-        // Add more lines and colors as needed
-      };
+        };
 
+      //puts all the data from the api call together 
+      
 const tubeLines = tubeData.map((line) => {
   const lineColor = lineColors[line.name] || "#000000";
   const statusSeverity = line.lineStatuses[0].statusSeverity;
@@ -75,7 +76,7 @@ const tubeLines = tubeData.map((line) => {
                   </div>`;
       });
 
-    statusContainer.innerHTML = `<div class="table-container">${tubeLines.concat(elizabethLine, londonOvergroundLine).join("")}</div>`;
+    statusContainer.innerHTML = `<div class="table-container">${tubeLines.concat(elizabethLine, londonOvergroundLine).join("")}</div>`; //joins the data together 
   }
 
   // Function to determine the color based on status severity
@@ -88,7 +89,7 @@ const tubeLines = tubeData.map((line) => {
       case 8: // Severe Delays
         return "#FF0000"; // Red
       default:
-        return "#FF0000"; // Default to black
+        return "#FF0000"; // All else goes to red
     }
   }
 });
