@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const tubeApiUrl = `https://api.tfl.gov.uk/line/mode/tube/status`;
   const elizabethLineApiUrl = 'https://api.tfl.gov.uk/line/elizabeth/status';
-  const nationalRailApiUrl = 'https://api.tfl.gov.uk/line/mode/national-rail/status';
+  const nationalRailApiUrl = 'https://api.tfl.gov.uk/line/mode/overground/status';
 
   // Fetch tube status data from TfL API
   const fetchTubeData = fetch(tubeApiUrl).then((response) => response.json());
@@ -68,13 +68,11 @@ const tubeLines = tubeData.map((line) => {
         const lineColor = lineColors[line.name] || "#000000";
         const statusSeverity = line.lineStatuses[0].statusSeverity;
         const statusColor = getStatusColor(statusSeverity);
-        const cause = line.lineStatuses[0].reason ?? "N/A"; // Use empty string if reason is undefined
-
+        
         return `<div class="line" style="color: ${lineColor};">
                   <strong>${line.name}</strong>
                   <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
-                  <span class="cause">${cause}</span>
-                </div>`;
+                  </div>`;
       });
 
     statusContainer.innerHTML = `<div class="table-container">${tubeLines.concat(elizabethLine, londonOvergroundLine).join("")}</div>`;
