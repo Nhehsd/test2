@@ -45,13 +45,4 @@ body {
   font-weight: bold;
 }
 
-.line .cause {
-  color: #ff9900;
-  visibility: hidden;
-}
 
-/* Hide the cause text if it's "N/A" */
-.line .cause:empty,
-.line .cause:contains("N/A") {
-  visibility: hidden;
-}
