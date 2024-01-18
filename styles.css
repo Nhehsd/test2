@@ -9,6 +9,7 @@ h1 {
   display: inline; /* Make the background only as wide as the text */
   padding: 0.2em 0.5em; /* Add padding to create space around the text */
   border-radius: 5px; /* Optional: Add rounded corners */
+  margin-right: 10px; /*adds a margine to the rght to align the heading*/
 }
 
 body {
