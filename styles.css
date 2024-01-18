@@ -10,6 +10,8 @@ h1 {
   padding: 0.2em 0.5em; /* Add padding to create space around the text */
   border-radius: 5px; /* Optional: Add rounded corners */
   margin-left: 69px; 
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: bold;
 }
 
 body {
