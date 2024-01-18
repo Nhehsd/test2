@@ -3,6 +3,14 @@ html, body {
   margin: 0;
 }
 
+h1 {
+  color: #002269;
+  background: rgba(255, 255, 255, 0.7); /* Adjust the transparency as needed */
+  display: inline; /* Make the background only as wide as the text */
+  padding: 0.2em 0.5em; /* Add padding to create space around the text */
+  border-radius: 5px; /* Optional: Add rounded corners */
+}
+
 body {
   background: url('1.jpg') center center fixed;
   background-size: cover;
@@ -38,7 +46,7 @@ body {
 }
 
 .line strong {
-  margin-bottom: 6px;
+  margin-bottom: 7px;
 }
 
 .line .status {
