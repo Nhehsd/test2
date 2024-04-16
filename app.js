@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return `<div class="line" style="color: ${lineColor};">
                 <strong>${line.name}</strong>
                 <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
-                <span class="reason">${reason}</span>
-              </div>`;
+                </div>
+                <div class="reason">${reason}</div>`;
     });
 
     const elizabethLine = elizabethLineData.map((line) => {
@@ -52,8 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return `<div class="line" style="color: ${lineColor};">
                 <strong>${line.name}</strong>
                 <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
-                <span class="reason">${reason}</span>
-              </div>`;
+                </div>
+                <div class="reason">${reason}</div>`;
     });
 
     const londonOvergroundLine = nationalRailData.filter((line) => line.name === "London Overground")
@@ -66,8 +66,8 @@ document.addEventListener("DOMContentLoaded", function () {
         return `<div class="line" style="color: ${lineColor};">
                   <strong>${line.name}</strong>
                   <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
-                  <span class="reason">${reason}</span>
-                </div>`;
+                  </div>
+                  <div class="reason">${reason}</div>`;
       });
 
     statusContainer.innerHTML = `<div class="table-container">${tubeLines.concat(elizabethLine, londonOvergroundLine).join("")}</div>`;
