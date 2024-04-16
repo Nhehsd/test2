@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const lineColor = lineColors[line.name] || "#000000";
       const statusSeverity = line.lineStatuses[0].statusSeverity;
       const statusColor = getStatusColor(statusSeverity);
-      const reason = line.lineStatuses[0].reason || 'No specific reason provided';
+      const reason = line.lineStatuses[0].reason || ' ';
 
       return `<div class="line-container" style="color: ${lineColor};">
                 <div class="line">
