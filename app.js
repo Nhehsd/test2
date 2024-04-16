@@ -36,13 +36,19 @@ document.addEventListener("DOMContentLoaded", function () {
       const statusColor = getStatusColor(statusSeverity);
       const reason = line.lineStatuses[0].reason || ' ';
 
-      return `<div class="line-container" style="color: ${lineColor};">
-                <div class="line">
-                  <strong>${line.name}</strong>
-                  <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
-                </div>
-                <div class="reason">${reason}</div>
-              </div>`;
+     let reasonHTML = '';
+        if (reason !== '' && reason !== 'N/A') {
+            const reasonTextColor = statusColor; // Set reason text color to match status color
+            reasonHTML = `<div class="reason" style="color: ${reasonTextColor};">${reason}</div>`;
+        }
+
+        return `<div class="line-container">
+                    <div class="line" style="color: ${lineColor};">
+                        <strong>${line.name}</strong>
+                        <span class="status" style="color: ${statusColor};">${line.lineStatuses[0].statusSeverityDescription}</span>
+                    </div>
+                    ${reasonHTML}
+                </div>`;
     });
 
     const elizabethLine = elizabethLineData.map((line) => {
