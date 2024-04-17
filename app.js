@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     ${reasonHTML}
                 </div>`;
     });
+     setInterval(fetchDataAndDisplayStatus, 60000);
   const allLines = tubeLines.concat(elizabethLine, londonOvergroundLine);
 
     statusContainer.innerHTML = `<div class="table-container">${allLines.join("")}</div>`;
