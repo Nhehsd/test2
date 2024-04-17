@@ -111,9 +111,5 @@ document.addEventListener("DOMContentLoaded", function () {
         return "#FF0000"; // Default to red
     }
   }
-      // Initial data fetch and display
-    fetchDataAndDisplayStatus();
 
-    // Auto-refresh every 60 seconds
-    setInterval(fetchDataAndDisplayStatus, 60000);
 });
