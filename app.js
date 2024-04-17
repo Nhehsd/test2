@@ -77,9 +77,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const lineColor = lineColors[line.name] || "#000000";
         const statusSeverity = line.lineStatuses[0].statusSeverity;
         const statusColor = getStatusColor(statusSeverity);
-        const reason = line.lineStatuses[0].reason || ' ';
+        const reason = line.lineStatuses[0].reason || '';
 
-     let reasonHTML = '';
+        let reasonHTML = '';
         if (reason !== '' && reason !== 'N/A') {
             const reasonTextColor = statusColor; // Set reason text color to match status color
             reasonHTML = `<div class="reason" style="color: ${reasonTextColor};">${reason}</div>`;
