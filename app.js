@@ -30,11 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "Elizabeth line": "#9E579D"
     };
 
-      // Initial data fetch and display
-    fetchDataAndDisplayStatus();
-
-    // Auto-refresh every 60 seconds
-    setInterval(fetchDataAndDisplayStatus, 60000);
+  
 
     const tubeLines = tubeData.map((line) => {
       const lineColor = lineColors[line.name] || "#000000";
@@ -115,4 +111,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return "#FF0000"; // Default to red
     }
   }
+      // Initial data fetch and display
+    fetchDataAndDisplayStatus();
+
+    // Auto-refresh every 60 seconds
+    setInterval(fetchDataAndDisplayStatus, 60000);
 });
