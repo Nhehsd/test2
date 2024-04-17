@@ -93,8 +93,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     ${reasonHTML}
                 </div>`;
     });
+  const allLines = tubeLines.concat(elizabethLine, londonOvergroundLine);
 
-     statusContainer.innerHTML = `<div class="table-container">${tubeLines.join("")}</div>`;
+    statusContainer.innerHTML = `<div class="table-container">${allLines.join("")}</div>`;
   }
 
   function getStatusColor(severity) {
