@@ -30,8 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "Elizabeth line": "#9E579D"
     };
 
-  
-
     const tubeLines = tubeData.map((line) => {
       const lineColor = lineColors[line.name] || "#000000";
       const statusSeverity = line.lineStatuses[0].statusSeverity;
@@ -95,7 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     ${reasonHTML}
                 </div>`;
     });
-  
+  const allLines = tubeLines.concat(elizabethLine, londonOvergroundLine);
+
     statusContainer.innerHTML = `<div class="table-container">${allLines.join("")}</div>`;
   }
 
@@ -111,5 +110,4 @@ document.addEventListener("DOMContentLoaded", function () {
         return "#FF0000"; // Default to red
     }
   }
-
 });
