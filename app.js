@@ -93,7 +93,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     ${reasonHTML}
                 </div>`;
     });
-     setInterval(fetchDataAndDisplayStatus, 60000);
+      // Function to display tube, Elizabeth line, and National Rail Service status
+    function displayTubeStatus(tubeData, elizabethLineData, nationalRailData) {
+        // Your existing displayTubeStatus function logic here...
+    }
+
+    // Initial data fetch and display
+    fetchDataAndDisplayStatus();
+
+    // Auto-refresh every 60 seconds 
+    setInterval(fetchDataAndDisplayStatus, 60000);
   const allLines = tubeLines.concat(elizabethLine, londonOvergroundLine);
 
     statusContainer.innerHTML = `<div class="table-container">${allLines.join("")}</div>`;
